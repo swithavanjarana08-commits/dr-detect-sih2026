@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RetinaXplain | DR Screening</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="brand">
+      <div class="eye-icon">◉</div>
+      <div>
+        <h1>RetinaXplain</h1>
+        <p>AI-assisted DR Screening</p>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#screening">Screening</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="tag">SIH 2026 • Problem Statement 26038</span>
+        <h2>Explainable AI for diabetic-retinopathy screening in rural India.</h2>
+        <p>
+          A proposed tele-ophthalmology workflow that helps healthcare workers
+          upload retinal fundus images, assess image quality, prioritize referrals,
+          and support ophthalmologist review.
+        </p>
+        <a class="primary-button" href="#screening">Start Screening Demo</a>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-title">Proposed workflow</div>
+        <div class="workflow-line">Fundus image upload</div>
+        <div class="arrow">↓</div>
+        <div class="workflow-line">Image-quality assessment</div>
+        <div class="arrow">↓</div>
+        <div class="workflow-line">AI risk screening + explanation</div>
+        <div class="arrow">↓</div>
+        <div class="workflow-line">Ophthalmologist review and referral</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <h3>5 Levels</h3>
+        <p>DR severity grading</p>
+      </div>
+      <div class="stat-card">
+        <h3>30 sec</h3>
+        <p>Target specialist review</p>
+      </div>
+      <div class="stat-card">
+        <h3>Rural-first</h3>
+        <p>Low-bandwidth workflow design</p>
+      </div>
+    </section>
+
+    <section id="screening" class="screening-section">
+      <div class="section-heading">
+        <span class="tag">Prototype</span>
+        <h2>Fundus-image screening demo</h2>
+        <p>
+          Upload a retinal fundus image to demonstrate the proposed interface.
+          This demonstration does not provide a clinical diagnosis.
+        </p>
+      </div>
+
+      <div class="screening-grid">
+        <div class="panel upload-panel">
+          <h3>1. Upload fundus image</h3>
+
+          <label class="upload-box" for="imageInput">
+            <input id="imageInput" type="file" accept="image/*" />
+            <div id="uploadPrompt">
+              <div class="upload-symbol">↑</div>
+              <strong>Click to upload an image</strong>
+              <span>PNG, JPG, or JPEG</span>
+            </div>
+            <img id="previewImage" alt="Uploaded fundus preview" />
+          </label>
+
+          <button id="analyzeButton" class="primary-button analyze-button" disabled>
+            Analyze Image
+          </button>
+        </div>
+
+        <div class="panel result-panel">
+          <h3>2. Screening result</h3>
+
+          <div id="emptyState" class="empty-state">
+            Upload an image and click <strong>Analyze Image</strong> to see the
+            prototype screening report.
+          </div>
+
+          <div id="resultContent" class="hidden">
+            <div class="quality-row">
+              <span>Image quality</span>
+              <strong id="qualityResult">Adequate</strong>
+            </div>
+
+            <div class="severity-card">
+              <span>Screening priority</span>
+              <h4 id="severityResult">Moderate NPDR</h4>
+              <p id="confidenceResult">Prototype confidence: 91%</p>
+            </div>
+
+            <div class="explanation">
+              <h4>Explainability view</h4>
+              <div class="heatmap-wrap">
+                <img id="heatmapImage" alt="Image with prototype attention overlay" />
+                <div class="heat-spot spot-one"></div>
+                <div class="heat-spot spot-two"></div>
+              </div>
+              <p>
+                Highlighted regions represent the future Grad-CAM attention-map
+                output. In the final system, an ophthalmologist validates this evidence.
+              </p>
+            </div>
+
+            <div class="recommendation">
+              <h4>Suggested next step</h4>
+              <p id="recommendationResult">
+                Refer for ophthalmologist review within 3 months.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="safety-note">
+        <strong>Safety notice:</strong> This public site is an educational prototype
+        for SIH. It does not diagnose diabetic retinopathy and must not replace a
+        qualified ophthalmologist.
+      </div>
+    </section>
+
+    <section id="workflow" class="workflow-section">
+      <div class="section-heading">
+        <span class="tag">Solution architecture</span>
+        <h2>How RetinaXplain will work</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-number">01</div>
+          <h3>Image-quality gate</h3>
+          <p>
+            Check focus, illumination, and retinal field of view. Poor images are
+            flagged for immediate recapture.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">02</div>
+          <h3>AI screening</h3>
+          <p>
+            A future validated model will grade No DR through Proliferative DR and
+            identify referable cases.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">03</div>
+          <h3>Clinical explanation</h3>
+          <p>
+            Grad-CAM maps and lesion evidence will help ophthalmologists review AI
+            decisions quickly and safely.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-number">04</div>
+          <h3>Referral workflow</h3>
+          <p>
+            High-risk patients are prioritized for tele-ophthalmology review and
+            treatment referral.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2>Built for SIH 2026</h2>
+      <p>
+        Problem Statement 26038: Explainable AI for Diabetic Retinopathy Screening
+        in Rural India.
+      </p>
+      <p class="small-text">
+        Planned datasets: APTOS 2019, IDRiD, DRIVE, and Messidor-2. Planned model
+        modules: image-quality assessment, CLAHE enhancement, lesion segmentation,
+        five-level grading, calibrated confidence, Grad-CAM, and human-in-the-loop
+        clinical review.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 RetinaXplain • SIH Prototype • Built for ethical AI-assisted screening</p>
+  </footer>
+
+  <script>
+    const imageInput = document.getElementById("imageInput");
+    const previewImage = document.getElementById("previewImage");
+    const uploadPrompt = document.getElementById("uploadPrompt");
+    const analyzeButton = document.getElementById("analyzeButton");
+    const emptyState = document.getElementById("emptyState");
+    const resultContent = document.getElementById("resultContent");
+    const heatmapImage = document.getElementById("heatmapImage");
+
+    imageInput.addEventListener("change", function () {
+      const file = imageInput.files[0];
+
+      if (!file) return;
+
+      const imageUrl = URL.createObjectURL(file);
+      previewImage.src = imageUrl;
+      previewImage.style.display = "block";
+      uploadPrompt.style.display = "none";
+      analyzeButton.disabled = false;
+    });
+
+    analyzeButton.addEventListener("click", function () {
+      const imageUrl = previewImage.src;
+
+      if (!imageUrl) return;
+
+      analyzeButton.textContent = "Analyzing...";
+      analyzeButton.disabled = true;
+
+      setTimeout(() => {
+        heatmapImage.src = imageUrl;
+        emptyState.classList.add("hidden");
+        resultContent.classList.remove("hidden");
+        analyzeButton.textContent = "Analyze Image";
+        analyzeButton.disabled = false;
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
