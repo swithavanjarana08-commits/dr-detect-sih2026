@@ -1,4 +1,14 @@
-# RetinaXplain: Diabetic Retinopathy Screening
+---
+title: RetinaXplain
+emoji: 👁️
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: 5.0.0
+app_file: app.py
+pinned: false
+license: mit
+---                                                                                                                                                                                                                                                                                                                                                       # RetinaXplain: Diabetic Retinopathy Screening
 
 ## Smart India Hackathon 2026
 
